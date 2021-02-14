@@ -1,0 +1,141 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+
+}
+
+header {
+  width: 100%;
+  background: #52524E;
+  display: block;
+  /* color:#E4DC49;
+  border: 1px solid #28a745; */
+}
+
+header button {
+  width: 142px;
+
+}
+#logo {
+  font-size: 28px;
+
+  padding-top: 18px;
+}
+
+/* header button {
+  position: relative;
+  right: 10px;
+  float: right;
+} */
+
+.menu-button {
+  width: 50px;
+  right: 0;
+  border-radius:100px;
+  border-color: grey;
+}
+
+.hide-menu {
+
+  display: none;
+
+}
+
+
+.hide-menu ul {
+  list-style-type: none;
+}
+.hide-menu ul li {
+  padding: 10px 40px;
+}
+
+.avatar {
+  width:120px;
+  height: 120px;
+  border-radius:100%;
+  margin-left: 0px;
+}
+
+
+
+a:hover {text-decoration: none;}
+
+footer {
+  width: 100%;
+  background:#52524E;
+  height: 80px;
+  display: block;
+  position: fixed;
+  bottom: 0px;
+
+}
+
+.form-reg,
+.form-update {
+  width: 100%;
+  border:1px solid grey;
+  border-radius: 5px;
+  padding:30px;
+  box-shadow:0.4em 0.4em 5px 5px #52524E;
+}
+
+.form-reg label,
+.form-update label {
+  font-size: 20px;
+  color:
+}
+
+.form-reg span,
+.form-update span{
+  font-size: 12px;
+  color: #0000ff;
+}
+
+.auth input,
+.auth textarea {
+  width: 450px;
+  /* height: 40px; */
+  margin-bottom: 10px;
+  margin-top: 10px;
+  border-radius: 4px;
+
+}
+
+.auth input{height: 40px;}
+.auth label {
+  width: 100%;
+  outline-color: blue;
+  outline: inherit;
+}
+
+.auth button {
+  width:140px;
+}
+
+.user-info {
+  border: 1px solid black;
+  box-shadow:0.4em 0.4em 5px 5px #52524E;
+  padding:
+}
+
+.hidden-menu {display: none;}
+.hidden-menu  a {font-size: 18px;}
+
+.diary-item {
+  border: 2px solid black;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow:0.4em 0.4em 5px 5px #52524E;
+}
+
+.add button { width: 200px;}
+
+.diary-detail {
+  border: 2px solid black;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow:0.4em 0.4em 5px 5px #52524E;
+}

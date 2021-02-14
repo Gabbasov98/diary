@@ -1,0 +1,23 @@
+{% extends 'biography/base.html' %}
+
+{% block title %}
+    Удаление статьи
+{% endblock %}
+
+{% block content %}
+    <div class="container mt-5 mb-5">
+        <div class="row justify-content-center">
+            <div class="col col-lg-5    ">
+                <h2 class="text-center">Вы точно хотите удалить статью "{{ object.title}}"</h2>
+                <form method="post" class="  mt-5 mb-5">
+                    {% csrf_token %}
+                    <div class="text-center">
+                        <button class="btn btn-danger  " type="submit">Да, удалить</button>
+                        <button class="btn btn-success ml-3"><a href="{% url 'diary-detail' object.id %}" class="text-light" > Нет,отмена</a></button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

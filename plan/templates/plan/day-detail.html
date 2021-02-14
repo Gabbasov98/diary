@@ -1,0 +1,38 @@
+{% extends 'biography/base.html' %}
+
+{% block title %}
+    {{title}}
+{% endblock %}
+
+{% block content %}
+    <h1 class="text-center mt-3"> Планы на {{title|date:'d E'}}</h1>
+    {% if  user.is_authenticated %}
+
+    {% endif %}
+
+    <div class="container mb-5">
+        <div class="row justify-content-center mt-5">
+            <div class="col-12 col-lg-4 ">
+                <ul>
+                    {% for post in goals %}
+                        <li style="list-style-type: decimal"><h5 class="">{{n}}{{post.text}}</h5></li>
+                        <span><a href="{% url 'day-detail-delete' user post.id %}" class="text-danger text-sm">Удалить</a></span>
+                        <br><br>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-6 ">
+                <h2>Добавление новой цели</h2>
+                <form method="post new-goal" class=" mt-1 mb-5">
+                    {% csrf_token %}
+                    {{form}}
+                    <button class="btn btn-outline-secondary mt-2" type="button">Добавить</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <br><br><br><br><br><br>
+{% endblock %}

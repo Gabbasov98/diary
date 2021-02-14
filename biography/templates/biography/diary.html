@@ -1,0 +1,52 @@
+{% extends 'biography/base.html' %}
+
+{% block title %}
+    {{title}}
+{% endblock %}
+
+{% block content %}
+    <h1 class="text-center mt-3">{{title}}</h1>
+    {% if  user.is_authenticated %}
+        <p class="text-center mt-3"><a href="{% url 'diary-add' %}" class="btn btn-outline-secondary  text-dark">Добавить новую запись</a></p>
+    {% endif %}
+
+    <div class="container mb-3"></div>
+        {% for post in biography %}
+            <div class="row justify-content-center mb-4">
+                {% if user == post.author %}
+                    <div class="col-12 col-lg-6 diary-item  ">
+                        <h2 class="text-center mb-5">{{post.title}}</h2>
+                        <p><b>Время публикации:</b> {{post.date}}</p>
+                        <p>{{post.text|truncatechars:150}}</p>
+                        <a href="{% url 'diary-detail' post.id %}" class="btn btn-outline-primary">Читать далее</a>
+                    </div>
+                {% endif %}
+            </div>
+        {% endfor %}
+            <div class="row justify-content-center mt-3">
+                <div class="col-12 col-lg-6">
+                    {% if is_paginated%}
+                        {% if page_obj.has_previous %}
+                            <a href="{% url 'diary' %}" class="btn btn-outline-secondary">Начало</a>`
+                            <a href="?page={{ page_obj.previous_page_number}}" class="btn btn-outline-secondary">Предыдущая</a>`
+                        {% endif %}
+                        {% for num in page_obj.paginator.page_range %}
+                            {% if num == page_obj.number %}
+                                <button class="btn btn-secondary">{{num}}</button>
+                            {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'+3'%}
+                                <a href="?page={{num}}" class="btn btn-outline-secondary">{{num}}</a>
+                            {% endif %}
+                        {% endfor %}
+                        {% if page_obj.has_next %}
+                            <a href="?page={{ page_obj.next_page_number}}" class="btn btn-outline-secondary">Следующая</a>`
+                            <a href="?page={{page_obj.paginator.num_pages}}" class="btn btn-outline-secondary">Последняя</a>`
+                        {% endif %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+
+    <br><br><br><br><br><br>
+
+{% endblock %}

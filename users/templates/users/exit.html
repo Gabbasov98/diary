@@ -1,0 +1,18 @@
+{% extends 'biography/base.html' %}
+
+{% block title %}
+    Выход с аккаунта
+{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h2>Вы вышли с аккаунта</h2>
+                <a href="{% url 'auth' %}">Войти в личный кабинет снова</a>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'biography/base.html' %}
+
+{% block title %}
+    {{title}}
+{% endblock %}
+
+{% block content %}
+    <h1 class="text-center mt-3">{{title}}</h1>
+    {% if  user.is_authenticated %}
+        <p class="text-center mt-3"><a href="{% url 'day-add' user %}" class="btn btn-outline-secondary  text-dark">Добавить новый день</a></p>
+    {% endif %}
+
+    <div class="container mb-5"></div>
+        <div class="row justify-content-center">
+            {% for post in goal_day %}
+            <div class="col-12 col-lg-1   ">
+                <a href="{% url 'day-detail' user post.id %}" class="btn btn-secondary">{{post.date|date:"d.m.Y "}}</a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <br><br><br><br><br><br>
+{% endblock %}

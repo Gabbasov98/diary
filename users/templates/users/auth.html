@@ -1,0 +1,22 @@
+{% extends 'biography/base.html' %}
+
+{% block title %}
+    Авторизация
+{% endblock %}
+
+{% block content %}
+    <h1>Авторизация пользователя</h1>
+    <div class="container mt-5 mb-5">
+        <div class="row justify-content-center">
+            <div class="col col-lg-6 ">
+                <h2 class="text-center">Регистрация пользователя</h2>
+                <form method="post" class="form-reg auth mt-5 mb-5">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button class="btn btn-info" type="submit">Войти</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
